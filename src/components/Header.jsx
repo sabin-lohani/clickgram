@@ -141,11 +141,17 @@ export default function Header() {
             <img
               src={session.user.image}
               alt={session.user.name}
-              className="h-10 w-10 rounded-full"
+              className="h-10 w-10 rounded-full hidden md:block"
+            />
+            <img
+              src={session.user.image}
+              alt={session.user.name}
+              className="h-10 w-10 rounded-full md:hidden"
+              onClick={signOut}
             />
             <button
               onClick={signOut}
-              className="text-sm font-semibold text-red-500"
+              className="text-sm font-semibold text-red-500 hidden md:block"
             >
               Log Out
             </button>

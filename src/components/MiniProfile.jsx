@@ -3,7 +3,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 export default function MiniProfile() {
   const { data: session } = useSession();
   return (
-    <div className="flex items-center justify-between mt-14 scroll-ml-10 gap-3">
+    <div className="flex items-center justify-between mt-14 ml-10 w-full gap-3">
       <img
         src={session?.user?.image || "/logo-img.png"}
         alt={session?.user?.name || "Clickgram User"}
