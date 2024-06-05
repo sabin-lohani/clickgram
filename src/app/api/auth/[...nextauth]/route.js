@@ -12,6 +12,15 @@ const handler = NextAuth({
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
     }),
   ],
+  callbacks: {
+    async session({ session, token }) {
+      session.user.username = session.user.name
+        .split(" ")
+        .join("")
+        .toLocaleLowerCase();
+      return session;
+    },
+  },
   secret: process.env.NEXT_AUTH_SECRET,
 });
 export { handler as GET, handler as POST };
