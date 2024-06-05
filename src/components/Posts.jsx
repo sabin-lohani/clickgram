@@ -12,11 +12,14 @@ export default async function Posts() {
   const db = getFirestore(app);
   const q = query(collection(db, "posts"), orderBy("timestamp", "desc"));
   const querySnapshot = await getDocs(q);
-
+  let data = [];
+  querySnapshot.forEach((doc) => {
+    data.push({ id: doc.id, ...doc.data() });
+  });
   return (
     <div>
-      {querySnapshot.docs.map((doc) => (
-        <Post key={doc.id} post={doc.data()} />
+      {data.map((doc) => (
+        <Post key={doc.id} post={doc} />
       ))}
     </div>
   );
