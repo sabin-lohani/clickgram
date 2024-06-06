@@ -16,7 +16,6 @@ export default async function Posts() {
   querySnapshot.forEach((doc) => {
     data.push({ id: doc.id, ...doc.data() });
   });
-  console.log(data);
   return (
     <div>
       {data.map((doc) => (
