@@ -1,5 +1,6 @@
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import LikeSection from "./LikeSection";
+import CommentSection from "./CommentSection";
 export default function Post({ post }) {
   return (
     <div className="bg-white my-7 border rounded-md">
@@ -24,6 +25,7 @@ export default function Post({ post }) {
           {post.caption}
         </p>
       )}
+      <CommentSection id={post.id} />
     </div>
   );
 }
