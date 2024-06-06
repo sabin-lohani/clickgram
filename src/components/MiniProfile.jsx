@@ -18,7 +18,7 @@ export default function MiniProfile() {
       {session ? (
         <button
           onClick={signOut}
-          className="text-red-400 text-sm font-semibold"
+          className="text-red-600 text-sm font-semibold"
         >
           Log Out
         </button>

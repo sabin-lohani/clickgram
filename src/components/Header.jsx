@@ -151,7 +151,7 @@ export default function Header() {
             />
             <button
               onClick={signOut}
-              className="text-sm font-semibold text-red-500 hidden md:block"
+              className="text-sm font-semibold text-red-600 hidden md:block"
             >
               Log Out
             </button>
